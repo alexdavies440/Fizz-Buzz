@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
         const fizzbuzz = fizz * buzz;
         const countTo = document.querySelector("input[name=countTo]").value;
         let result = [];
-        for (let i = 1; i < countTo; i++) {
+        for (let i = 1; i <= countTo; i++) {
             result.push(i);
         }
         
@@ -30,9 +30,16 @@ window.addEventListener("load", function() {
                 result[i] = "buzz";
             }
         }
-        
-        result = result.join("<br>");
-        console.log(result)
+        console.log(result);
+        let addSpace = function(num) {
+            return " " + num + " ";
+        }
+        result = result.map(addSpace);
+        console.log(result);
+        // let space = "------";
+        // space = " ";
+        result = result.join("***");
+        //console.log(result)
         let p = document.querySelector("p");
         p.innerHTML = result;
         p.style = "margin-left: 20px; font-size: larger";
