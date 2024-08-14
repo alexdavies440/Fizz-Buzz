@@ -21,13 +21,13 @@ window.addEventListener("load", function() {
         for (let i = 0; i < result.length; i++) {
     
             if (result[i] % fizzbuzz === 0) {
-                result[i] = "fizzbuzz";
+                result[i] = "Fizzbuzz";
             }
             else if (result[i] % fizz === 0) {
-                result[i] = "fizz";
+                result[i] = "Fizz";
             }
             else if (result[i] % buzz === 0) {
-                result[i] = "buzz";
+                result[i] = "Buzz";
             }
         }
         console.log(result);
@@ -38,11 +38,13 @@ window.addEventListener("load", function() {
         console.log(result);
         // let space = "------";
         // space = " ";
-        result = result.join("***");
+        //space = ")...(";
+        space = "...";
+        space ="~"
+        result = result.join(space);
         //console.log(result)
         let p = document.querySelector("p");
         p.innerHTML = result;
-        p.style = "margin-left: 20px; font-size: larger";
 
         event.preventDefault();
     })
