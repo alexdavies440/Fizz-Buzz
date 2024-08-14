@@ -1,26 +1,44 @@
 
 window.addEventListener("load", function() {
-    let result = [];
-    for (let i = 1; i < 100; i++) {
-        result.push(i);
-    }
-    
-    for (let i = 0; i < result.length; i++) {
+
+    let header = document.querySelector("h1");
+    header.style = "text-align: center";
+
+    let form = document.querySelector("form");
+    form.style = "text-align: center; font-size: larger";
+
+    document.addEventListener("submit", function(event) {
+
+        const fizz = document.querySelector("input[name=fizz]").value;
+        const buzz = document.querySelector("input[name=buzz]").value;
+        const fizzbuzz = fizz * buzz;
+        const countTo = document.querySelector("input[name=countTo]").value;
+        let result = [];
+        for (let i = 1; i < countTo; i++) {
+            result.push(i);
+        }
         
-        if (result[i] % 15 === 0) {
-            result[i] = "fizzbuzz";
-        }
-        else if (result[i] % 3 === 0) {
-            result[i] = "fizz";
-        }
-        else if (result[i] % 5 === 0) {
-            result[i] = "buzz";
-        }
-    }
+        for (let i = 0; i < result.length; i++) {
     
-    result = result.join("<br>");
-    console.log(result)
-    let p = document.querySelector("p");
-    p.innerHTML = result;
+            if (result[i] % fizzbuzz === 0) {
+                result[i] = "fizzbuzz";
+            }
+            else if (result[i] % fizz === 0) {
+                result[i] = "fizz";
+            }
+            else if (result[i] % buzz === 0) {
+                result[i] = "buzz";
+            }
+        }
+        
+        result = result.join("<br>");
+        console.log(result)
+        let p = document.querySelector("p");
+        p.innerHTML = result;
+        p.style = "margin-left: 20px; font-size: larger";
+
+        event.preventDefault();
+    })
+    
 })
     
