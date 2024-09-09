@@ -30,19 +30,14 @@ window.addEventListener("load", function() {
                 result[i] = "Buzz";
             }
         }
-        console.log(result);
+        
         let addSpace = function(num) {
             return " " + num + " ";
         }
         result = result.map(addSpace);
-        console.log(result);
-        // let space = "------";
-        // space = " ";
-        //space = ")...(";
         space = "...";
-        space ="~"
+        //space ="~"
         result = result.join(space);
-        //console.log(result)
         let p = document.querySelector("p");
         p.innerHTML = result;
 
